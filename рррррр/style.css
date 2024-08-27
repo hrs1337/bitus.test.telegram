@@ -1,0 +1,240 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Общие стили для контейнеров */
+.container {
+    text-align: center;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 400px;
+    margin-bottom: 50px; /* Отступ снизу для навигационной панели */
+}
+
+.hidden {
+    display: none;
+}
+
+/* Счетчик монет и энергии */
+.counter, .energy-counter {
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+
+#energy-bar {
+    width: 100%;
+    height: 10px;
+    margin-top: 10px;
+}
+
+/* Кнопка клика */
+.click-button-container {
+    margin-bottom: 20px;
+}
+
+#click-button {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    outline: none;
+    transition: transform 0.1s ease, background-color 0.2s ease;
+}
+
+#click-button:hover {
+    background-color: #0056b3;
+}
+
+#click-button:active {
+    transform: scale(0.95);
+}
+
+/* Статус-бар */
+.status-bar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.energy-counter {
+    font-size: 18px;
+}
+
+.boost-container {
+    text-align: right;
+}
+
+#boost-button {
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#boost-button:hover {
+    background-color: #218838;
+}
+
+/* Меню улучшений */
+.upgrade {
+    margin-top: 20px;
+    text-align: left;
+}
+
+.upgrade p {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.upgrade button {
+    padding: 10px 20px;
+    margin-bottom: 10px;
+    background-color: #ffc107;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.upgrade button:hover {
+    background-color: #e0a800;
+}
+
+/* Навигационная панель */
+/* Уменьшаем ширину панели управления и располагаем её под игрой */
+.nav-bar {
+    position: relative; /* Меняем с фиксированного на относительное */
+    width: 90%; /* Делаем ширину такой же, как у контейнера игры */
+    max-width: 400px;
+    margin: 0 auto;
+    background-color: #343a40;
+    padding: 10px 0;
+    box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    border-radius: 10px; /* Добавляем скругление, чтобы лучше сочеталась с игрой */
+}
+
+.nav-bar button {
+    background-color: #495057;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.nav-bar button:hover {
+    background-color: #6c757d;
+}
+
+/* Active Menu */
+.earn-buttons-horizontal {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.banner-small {
+    width: 45%;
+    padding: 10px;
+    margin: 5px 0;
+    background-color: #28a745;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.banner-large {
+    width: 100%;
+    padding: 20px;
+    margin: 10px 0;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    border-radius: 10px;
+    text-align: center;
+}
+
+#active-content, #completed-content {
+    margin-top: 20px;
+}
+
+/* Основные стили для мобильных устройств и Telegram Mini App */
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0; /* Фоновый цвет */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Контейнер приложения */
+.app-container {
+    width: 90%;
+    max-width: 400px; /* Максимальная ширина для десктопов */
+    background-color: #ffffff; /* Фоновый цвет контейнера */
+    padding: 20px;
+    border-radius: 10px; /* Скругление углов */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Тень */
+    text-align: center; /* Центрирование текста */
+}
+
+/* Стили для текста приветствия */
+h1 {
+    font-size: 24px;
+    color: #333333;
+    margin-bottom: 20px;
+}
+
+/* Стили для основного текста */
+.content p {
+    font-size: 16px;
+    color: #666666;
+    margin-bottom: 20px;
+}
+
+/* Стили для кнопки */
+button {
+    background-color: #0088cc; /* Цвет кнопки */
+    color: white; /* Цвет текста */
+    border: none; /* Убираем рамку */
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px; /* Скругление углов кнопки */
+    cursor: pointer;
+    transition: background-color 0.3s; /* Анимация при наведении */
+}
+
+/* Стили для кнопки при наведении */
+button:hover {
+    background-color: #005f8c; /* Изменение цвета кнопки при наведении */
+}

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Telegram Mini App</title>
+    
+    <!-- Подключаем стили -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Подключаем Telegram Web App API -->
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const tg = window.Telegram.WebApp;
+            tg.ready();
+            
+            // Получаем данные о пользователе Telegram
+            const user = tg.initDataUnsafe.user;
+            if (user) {
+                document.getElementById('user-name').textContent = `Привет, ${user.first_name}!`;
+            }
+        });
+    </script>
+</head>
+<body>
+    <div class="app-container">
+        <!-- Приветственное сообщение -->
+        <h1 id="user-name">Добро пожаловать!</h1>
+        
+        <!-- Основное содержимое -->
+        <div class="content">
+            <p>Это адаптированное мини-приложение для Telegram и мобильных устройств.</p>
+            <button onclick="window.Telegram.WebApp.close()">Закрыть приложение</button>
+        </div>
+    </div>
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Криптокликер</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Главное меню -->
+    <div class="container" id="main-menu">
+        <div class="counter">
+            <p>Монеты: <span id="coins">0</span></p>
+        </div>
+        <div class="click-button-container">
+            <button id="click-button">Клик</button>
+        </div>
+        <div class="status-bar">
+            <div class="energy-counter">
+                <p>Энергия: <span id="energy">1000</span>/<span id="max-energy">1000</span></p>
+                <progress id="energy-bar" value="1000" max="1000"></progress>
+            </div>
+            <div class="boost-container">
+                <button id="boost-button">Boost</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Меню Boost -->
+    <div class="container hidden" id="boost-menu">
+        <p>Баланс: <span id="player-coins">0</span></p>
+        <button id="full-energy-button">Full Energy (3/3 бесплатных)</button>
+        <div class="upgrade">
+            <h3>Меню улучшений</h3>
+            <p>Multi Touch (Уровень: <span id="multi-touch-level">1</span>)</p>
+            <button id="upgrade-multi-touch-button">Улучшить за <span id="multi-touch-cost">1000</span> монет</button>
+            <p>Energy Limit (Уровень: <span id="energy-limit-level">1</span>)</p>
+            <button id="upgrade-energy-limit-button">Улучшить за <span id="energy-limit-cost">10000</span> монет</button>
+        </div>
+        <button id="exit-boost-button">Назад</button>
+    </div>
+
+    <!-- Меню Заработать -->
+    <div class="container hidden" id="earn-menu">
+        <div class="earn-buttons-horizontal">
+            <div class="banner-small" id="active-button">Active</div>
+            <div class="banner-small" id="completed-button">Completed</div>
+        </div>
+        <div id="active-content" class="hidden">
+            <div class="banner-small">Small Banner 1</div>
+            <div class="banner-small">Small Banner 2</div>
+            <div class="banner-large" id="bitus-banner">Bitus</div>
+            <div class="banner-large">Big Banner 2</div>
+            <div class="banner-small">Small Banner 3</div>
+            <div class="banner-small">Small Banner 4</div>
+            <div class="banner-small">Small Banner 5</div>
+            <div class="banner-small">Small Banner 6</div>
+            <div class="banner-small">Small Banner 7</div>
+        </div>
+        <div id="completed-content" class="hidden">
+            <p id="no-tasks-message">Выполненных заданий нет... пока что.</p>
+        </div>
+        <button id="exit-earn-button">Назад</button>
+    </div>
+
+    <!-- Меню Bitus -->
+    <div class="container hidden" id="bitus-menu">
+        <div class="banner-large">
+            Bitus
+            <div class="banner-small">Small Banner 1</div>
+            <div class="banner-small">Small Banner 2</div>
+            <div class="banner-small">Small Banner 3</div>
+            <div class="banner-small">Small Banner 4</div>
+            <div class="banner-small">Small Banner 5</div>
+        </div>
+        <button id="exit-bitus-button">Назад</button>
+    </div>
+
+    <!-- Навигационная панель -->
+    <div class="nav-bar" id="nav-bar">
+        <button id="nav-main-menu-button">Главное меню</button>
+        <button id="nav-earn-button">Заработать</button>
+        <button id="nav-referral-button">Реферал</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
