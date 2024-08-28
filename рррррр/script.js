@@ -184,3 +184,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
     updateCounters(); // Обновляем интерфейс при загрузке
 });
+
+const tg = window.Telegram.WebApp;
+
+tg.MainButton.text = "Нажмите меня";
+tg.MainButton.show();
+
+tg.onEvent('mainButtonClicked', function() {
+    tg.sendData('Hello from Web App!');
+});
